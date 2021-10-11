@@ -1,0 +1,268 @@
+{% extends 'base.html' %}
+{%block title%}
+<!--====== Title ======-->
+<title>TIS - CONTACT</title>
+{% endblock %}
+
+{%block navbar%}
+<nav class="navbar navbar-expand-lg">
+    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+            class="navbar-toggler"
+            data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+
+    <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a href="/">Home</a>
+                {# Comment Start #}
+                {#
+                <a class="active" href="index-2">Home</a>
+                <ul class="sub-menu">
+                    <li><a class="active" href="index-2">Home 01</a></li>
+                    <li><a href="index-3">Home 02</a></li>
+                    <li><a href="index-4">Home 03</a></li>
+                </ul>
+                #}
+                {# Comment End #}
+            </li>
+            <li class="nav-item">
+                <a href="about">About us</a>
+            </li>
+            <li class="nav-item">
+                <a href="courses">Courses</a>
+                <ul class="sub-menu">
+                    <li><a href="courses">Courses</a></li>
+                    <li><a href="courses-single">Course Single</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="events">Events</a>
+                <ul class="sub-menu">
+                    <li><a href="events">Events</a></li>
+                    <li><a href="events-singel">Event Singel</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="teachers">Our teachers</a>
+                <ul class="sub-menu">
+                    <li><a href="teachers">teachers</a></li>
+                    <li><a href="teachers-single">Teacher Single</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="blog">Blog</a>
+                <ul class="sub-menu">
+                    <li><a href="blog">Blog</a></li>
+                    <li><a href="blog-singel">Blog Singel</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="shop">Shop</a>
+                <ul class="sub-menu">
+                    <li><a href="shop">Shop</a></li>
+                    <li><a href="shop-singel">Shop Singel</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="active" href="contact">Contact</a>
+                <ul class="sub-menu">
+                    <li><a href="contact">Contact Us</a></li>
+                    <li><a href="contact-2">Contact Us 2</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav> <!-- nav -->
+{% endblock %}
+
+{%block content%}
+<!--====== PAGE BANNER PART START ======-->
+
+<section class="pt-105 pb-130 bg_cover" data-overlay="8" id="page-banner"
+         style="background-image: url({{url_for('static', filename='images/page-banner-6.jpg')}})">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-banner-cont">
+                    <h2>Contact</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li aria-current="page" class="breadcrumb-item active">Contact</li>
+                        </ol>
+                    </nav>
+                </div>  <!-- page banner cont -->
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</section>
+
+<!--====== PAGE BANNER PART ENDS ======-->
+
+<!--====== CONTACT PART START ======-->
+
+<section class="pt-90 pb-120 gray-bg" id="contact-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="contact-from mt-30">
+                    <div class="section-title">
+                        <h5>Contact Us</h5>
+                        <h2>Keep in touch</h2>
+                    </div> <!-- section title -->
+                    <div class="main-form pt-45">
+                        <form action="#" data-toggle="validator" id="contact-form" method="POST">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="singel-form form-group">
+                                        <input data-error="Name is required." name="name" placeholder="Your name"
+                                               required="required" type="text">
+                                        <div class="help-block with-errors"></div>
+                                    </div> <!-- singel form -->
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="singel-form form-group">
+                                        <input data-error="Valid email is required." name="email" placeholder="Email"
+                                               required="required" type="email">
+                                        <div class="help-block with-errors"></div>
+                                    </div> <!-- singel form -->
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="singel-form form-group">
+                                        <input data-error="Subject is required." name="subject" placeholder="Subject"
+                                               required="required" type="text">
+                                        <div class="help-block with-errors"></div>
+                                    </div> <!-- singel form -->
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="singel-form form-group">
+                                        <input data-error="Phone is required." name="phone" placeholder="Phone"
+                                               required="required" type="text">
+                                        <div class="help-block with-errors"></div>
+                                    </div> <!-- singel form -->
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="singel-form form-group">
+                                        <textarea data-error="Please, leave us a message." name="message"
+                                                  placeholder="Message"
+                                                  required="required"></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div> <!-- singel form -->
+                                </div>
+                                <p class="form-message"></p>
+                                {#
+                                {% if success == True %}
+                                <!-- Success Alert -->
+                                {{comment}}
+                                <div aria-hidden="true" aria-labelledby="exampleModalCenterTitle" class="modal fade"
+                                     id="myModal"
+                                     role="dialog" tabindex="-1">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                                <button aria-label="Close" class="close" data-dismiss="modal"
+                                                        type="button">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                ...
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button class="btn btn-secondary" data-dismiss="modal" type="button">
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% elif miss %}
+                                <!-- Warning Alert -->
+                                <div class="alert alert-warning alert-dismissible fade show">
+                                    <strong>Warning!</strong> There was a problem with your network connection.
+                                    <button class="close" data-dismiss="alert" type="button">&times;</button>
+                                </div>
+                                {% elif is_email %}
+                                <!-- Error Alert -->
+                                <div class="alert alert-danger alert-dismissible fade show">
+                                    <strong>Error!</strong> A problem has been occurred while submitting your data.
+                                    <button class="close" data-dismiss="alert" type="button">&times;</button>
+                                </div>
+                                {% endif %}
+                                #}
+
+                                <div class="col-md-12">
+                                    <div class="singel-form">
+                                        {# <a class="main-btn" href="#" type="submit">Send</a>
+                                        #}
+                                        <button class="main-btn" type="submit">Send</button>
+                                        {#
+                                        {% if success %}
+                                        <div class="alert alert-success fade" id="thanks">
+                                            <button class="close" href="#" type="button">&times;</button>
+                                            <h4>Got it!</h4>
+                                            <p>Thanks. I've received your message, I'll be in touch within 24 hours.
+                                                Promise.</p>
+                                        </div>
+                                        {% end if %}
+                                        #}
+                                    </div> <!-- singel form -->
+                                </div>
+
+                            </div> <!-- row -->
+                        </form>
+                    </div> <!-- main form -->
+                </div> <!--  contact from -->
+            </div>
+            <div class="col-lg-5">
+                <div class="contact-address mt-30">
+                    <ul>
+                        <li>
+                            <div class="singel-address">
+                                <div class="icon">
+                                    <i class="fa fa-home"></i>
+                                </div>
+                                <div class="cont">
+                                    <p>Abu Al Asfahani Road, Karachi</p>
+                                    <p>Jinnah Road, Quetta</p>
+                                </div>
+                            </div> <!-- singel address -->
+                        </li>
+                        <li>
+                            <div class="singel-address">
+                                <div class="icon">
+                                    <i class="fa fa-phone"></i>
+                                </div>
+                                <div class="cont">
+                                    <p>+92 300 1234567</p>
+                                    <p>081 1234567</p>
+                                </div>
+                            </div> <!-- singel address -->
+                        </li>
+                        <li>
+                            <div class="singel-address">
+                                <div class="icon">
+                                    <i class="fa fa-envelope-o"></i>
+                                </div>
+                                <div class="cont">
+                                    <p>contact.techinsolutions@gmail.com</p>
+                                </div>
+                            </div> <!-- singel address -->
+                        </li>
+                    </ul>
+                </div> <!-- contact address -->
+                <div class="map mt-30">
+                    <div id="contact-map"></div>
+                </div> <!-- map -->
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</section>
+
+<!--====== CONTACT PART ENDS ======-->
+{% endblock %}
