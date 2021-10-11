@@ -1,0 +1,46 @@
+{% extends 'master.html' %}
+
+{% block container %}
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Enrolled Courses</h1>
+</div>
+<div class="row">
+    {% for c in courses %}
+    {% if c.enrollment %}
+    <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card" style="width: 20rem;">
+            <div class="card shadow">
+                <img alt="Card image cap" class="card-img-top"
+                     src="{{url_for('static', filename='images/course/cu-1.jpg')}}">
+                <div class="card-img-overlay">
+                    <div align="right" class="dropdown no-arrow">
+                        <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
+                           id="dropdownMenu" role="button">
+                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                        </a>
+                        <div aria-labelledby="dropdownMenu"
+                             class="dropdown-menu dropdown-menu-right shadow animated--fade-in">
+                            <form action="{{url_for('admin.unenroll_course', id=c.id)}}" method="POST">
+                                <!--                        <div class="dropdown-header">Dropdown Header:</div>-->
+                                <button class="dropdown-item" name="check" type="submit" value="Un-Enroll">Un-Enroll</button>
+                                <button class="dropdown-item" name="check" type="submit" value="Mark as Complete">Mark as Complete</button>
+                                <!--                        <div class="dropdown-divider"></div>-->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"><b>{{c.course.title}}</b></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">By: {{c.course.user.first_name}}
+                        {{c.course.user.last_name}}</h6>
+                    <p class="card-text">{{c.course.summary}}</p>
+                </div>
+            </div>
+            <a class="btn btn-primary" href="{{url_for('courses_view.courses_view_page', title=c.course.title)}}">Continue</a>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}

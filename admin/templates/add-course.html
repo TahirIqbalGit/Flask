@@ -1,0 +1,71 @@
+{% extends 'master.html' %}
+
+{%block container%}
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Edit Profile</h1>
+</div>
+<div class="container">
+    <form action="" class="form-horizontal" method="POST">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="title">Title:</label>
+            <div class="col-sm-10">
+                <input class="form-control" id="title" name="title" placeholder="Enter Title of the Course" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="category">Category:</label>
+            <div class="col-sm-10">
+                <input class="form-control" id="category" name="category" placeholder="Select Category" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="price">Price:</label>
+            <div class="col-sm-10">
+                <input class="form-control" id="price" name="price" placeholder="Enter price" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="summary">Summary:</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" id="summary" name="summary" placeholder="Enter course summary"
+                          rows="3"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="requirements">Course Requirements:</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" id="requirements" name="requirements" placeholder="Write course requirements"
+                          rows="5"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="duration">Duration of Course:</label>
+            <div class="col-sm-10">
+                <input class="form-control" id="duration" name="duration" placeholder="How long the course will be"
+                       type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="lectures">Lectures:</label>
+            <div class="col-sm-10">
+                <input class="form-control" id="lectures" name="lectures"
+                       placeholder="How many lecture included in this course" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="quizzes">Quizzes:</label>
+            <div class="col-sm-10">
+                <input class="form-control" id="quizzes" name="quizzes"
+                       placeholder="How many quizzes will taken in this course" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <div align="right" class="col-sm-offset-2 col-sm-10">
+                <button class="btn btn-primary" type="submit">Add Course</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
