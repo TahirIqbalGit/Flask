@@ -12,7 +12,10 @@ from views.shop import shop
 from hidden import *
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = f"mysql+pymysql://{user}:{password}@localhost/{database}"
+# app.config["SQLALCHEMY_DATABASE_URI"] = f"mysql+pymysql://{user}:{password}@localhost/{database}"
+# b50b43e0622449:40270995@us-cdbr-east-04.cleardb.com/heroku_001cd788b7f1af8?reconnect=true
+app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://b50b43e0622449:40270995@us-cdbr-east-04.cleardb.com" \
+                                        "/heroku_001cd788b7f1af8"
 app.config['SECRET_KEY'] = "secret"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db.init_app(app)
