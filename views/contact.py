@@ -1,6 +1,4 @@
-from flask import Blueprint, render_template, request, url_for, redirect, session
-from flask_sqlalchemy import SQLAlchemy
-from hidden import *
+from flask import Blueprint, render_template, request
 
 contact = Blueprint('contact', __name__)
 # connect to your Mongo DB database
