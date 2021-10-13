@@ -20,9 +20,11 @@ def courses_page():
 def courses_view_page(title):
     try:
         course = Course.query.filter(Course.title == title).first()
+        # teacher = User.query.filter(course.user_id == User.id).first()
         student = User.query.filter(User.email == session.get('email'), User.password == session.get('password')).first()
-        is_enrolled = Enrolled.query.filter(Enrolled.student_id == student.id, Enrolled.course_id == course.id).first()
         if request.method == "POST":
+            is_enrolled = Enrolled.query.filter(Enrolled.student_id == student.id,
+                                                Enrolled.course_id == course.id).first()
             if student:
                 if not is_enrolled.enrollment:
                     is_enrolled.enrollment = True
@@ -38,17 +40,16 @@ def courses_view_page(title):
                 # return render_template("courses-single.html", course=course, is_enrolled=is_enrolled)
                 return redirect(url_for("login.login_page"))
         else:
+            is_enrolled = Enrolled.query.filter(Enrolled.student_id == student.id,
+                                                Enrolled.course_id == course.id).first()
             return render_template("courses-single.html", course=course, is_enrolled=is_enrolled.enrollment)
     except:
         if request.method == "POST":
             return redirect(url_for("login.login_page"))
-        if not (student):
-            return render_template("courses-single.html", course=course, is_enrolled=False)
-        if not course:
+        # elif student:
+        #     return render_template("courses-single.html", course=course, is_enrolled=is_enrolled.enrollment)
+        elif not course:
             return redirect(url_for("courses.courses_page"))
-
-    # else:
-    #     if request.method == "POST":
-    #     else:
-    #         return render_template("courses-single.html", course=course, is_enrolled=is_enrolled)
+        else:
+            return render_template("courses-single.html", course=course, is_enrolled=False)
 
