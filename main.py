@@ -9,7 +9,6 @@ from views.blog import blog
 from views.contact import contact
 from admin.admin import login, signup, logout, admin
 from views.shop import shop
-from hidden import *
 
 app = Flask(__name__)
 # app.config["SQLALCHEMY_DATABASE_URI"] = f"mysql+pymysql://{user}:{password}@localhost/{database}"
