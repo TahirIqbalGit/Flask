@@ -166,10 +166,10 @@
                                     <li><i class="fa fa-star"></i></li>
                                 </ul>
                                 <span>
-                                    {% if c.review == "0" or c.review == "NULL" %}
-                                    (No Reviews)
-                                    {% else %}
+                                    {% if c.review %}
                                     ({{c.review|length}} Reviews)
+                                    {% else %}
+                                    (No Reviews)
                                     {% endif %}
                                 </span>
                                 <a href="{{ url_for('courses_view.courses_view_page', title=c.title)}}"><h4>{{c.title}}</h4></a>

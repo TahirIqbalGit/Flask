@@ -147,10 +147,10 @@
                                         <li><a href="#"><i class="fa fa-star"></i></a></li>
                                         <li><a href="#"><i class="fa fa-star"></i></a></li>
                                         <li class="rating">
-                                            {% if course.review == "0" or course.review == "NULL" %}
-                                            (No Reviews)
-                                            {% else %}
+                                            {% if course.review %}
                                             ({{course.review|length}} Reviews)
+                                            {% else %}
+                                            (No Reviews)
                                             {% endif %}
                                         </li>
                                     </ul>

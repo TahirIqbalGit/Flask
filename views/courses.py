@@ -5,7 +5,7 @@ courses = Blueprint('courses', __name__)
 courses_view = Blueprint('courses_view', __name__)
 
 
-@courses.route('/courses', methods=['GET'])
+@courses.route('/courses', methods=['GET', 'POST'])
 def courses_page():
     course = Course.query.all()
     teacher = User.query.all()
