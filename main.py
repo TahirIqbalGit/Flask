@@ -17,6 +17,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://ba9ae764e59af3:834d6bc9
                                         "/heroku_a0fdeca9b5d4d8d"
 app.config['SECRET_KEY'] = "secret"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+app.config['SQLALCHEMY_POOL_RECYCLE'] = 60
 db.init_app(app)
 
 app.register_blueprint(home)
